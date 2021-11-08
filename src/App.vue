@@ -6,7 +6,16 @@
     </main>
   </div>
 </template>
-
+<script>
+export default {
+  mounted(){
+    window.ondeviceorientation = (event)=>{
+      console.log(event);
+      console.log('sdfsdfsf');
+    }
+  }
+}
+</script>
 <style lang="scss">
 :root {
   --main-color: #000000;
