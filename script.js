@@ -2,10 +2,10 @@ let oldX = 0;
 let oldY = 0;
 let oldZ = 0;
 const watchValue = (oldValue,newValue) => {
-    if(newValue + 5 > oldValue){
+    if(newValue + document.getElementById('index').value > oldValue){
 
         return Math.floor(newValue)
-    }else if(newValue - 5 < oldValue){
+    }else if(newValue - document.getElementById('index').value < oldValue){
         return Math.floor(newValue)
     }
 }
