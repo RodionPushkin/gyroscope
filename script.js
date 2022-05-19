@@ -1,11 +1,12 @@
 let oldX = 0;
 let oldY = 0;
 let oldZ = 0;
+// 85 / 90
 const watchValue = (oldValue,newValue) => {
-    if(newValue + document.getElementById('index').value > oldValue){
+    if(newValue - oldValue > document.getElementById('index').value){
 
         return Math.floor(newValue)
-    }else if(newValue - document.getElementById('index').value < oldValue){
+    }else if(newValue - oldValue < document.getElementById('index').value){
         return Math.floor(newValue)
     }
 }
