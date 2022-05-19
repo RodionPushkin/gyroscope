@@ -1,14 +1,15 @@
+let oldX = 0;
+let oldY = 0;
+let oldZ = 0;
 const watchValue = (oldValue,newValue) => {
     if(newValue + 5 > oldValue){
+
         return Math.floor(newValue)
     }else if(newValue - 5 < oldValue){
         return Math.floor(newValue)
     }
 }
 const accelerometerUpdate = (event) =>{
-    let oldX = 0;
-    let oldY = 0;
-    let oldZ = 0;
     let X = watchValue(oldX,event.accelerationIncludingGravity.x*10);
     let Y = watchValue(oldY,event.accelerationIncludingGravity.y*10);
     let Z = watchValue(oldZ,event.accelerationIncludingGravity.z*10);
@@ -20,15 +21,17 @@ const accelerometerUpdate = (event) =>{
         oldX = -oldX - 180;
     }
     document.querySelector("#block").style.transform="rotate("+oldX+"deg)";
+    oldX = X;
+    oldY = Y;
+    oldZ = Z;
 }
+
 if (window.DeviceMotionEvent == undefined) {
-    //No accelerometer is present. Use buttons.
     document.querySelector("#acc").textContent = "NO";
     document.querySelector("#acc").className = "no";
-
 }
 else {
     document.querySelector("#acc").textContent = "YES";
     document.querySelector("#acc").className = "yes";
-    window.addEventListener("devicemotion", (e)=>{accelerometerUpdate(e)}, true);
+    window.addEventListener("devicemotion", accelerometerUpdate(e), true);
 }
