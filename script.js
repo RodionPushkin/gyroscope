@@ -4,11 +4,11 @@ let oldZ = 0;
 // 85 / 90
 const watchValue = (oldValue,newValue) => {
     if(newValue - oldValue > document.getElementById('index').value){
-
         return Math.floor(newValue)
     }else if(newValue - oldValue < document.getElementById('index').value){
         return Math.floor(newValue)
     }
+    return oldValue
 }
 const accelerometerUpdate = (event) =>{
     let X = watchValue(oldX,event.accelerationIncludingGravity.x*10);
