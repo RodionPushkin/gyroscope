@@ -3,7 +3,6 @@ let oldY = 0;
 let oldZ = 0;
 // 85 / 90
 const watchValue = (oldValue,newValue) => {
-    console.clear()
     console.log('oldValue',oldValue)
     console.log('newValue',newValue)
     if(newValue - oldValue > document.getElementById('index').value){
@@ -21,6 +20,7 @@ const accelerometerUpdate = (event) =>{
     document.querySelector("#x").value = oldX;
     document.querySelector("#y").value = oldY;
     document.querySelector("#z").value = oldZ;
+    console.clear()
     if (oldY < 0) {
         oldX = -oldX - 180;
     }
