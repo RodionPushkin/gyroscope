@@ -18,13 +18,13 @@ const watchValue = (oldValue,newValue) => {
 }
 
 
-function accelerometerUpdate(event) {
-    let X = watchValue(oldX,event.accelerationIncludingGravity.x*10);
-    let Y = watchValue(oldY,event.accelerationIncludingGravity.y*10);
-    let Z = watchValue(oldZ,event.accelerationIncludingGravity.z*10);
+const accelerometerUpdate = (event) =>{
     let oldX = 0;
     let oldY = 0;
     let oldZ = 0;
+    let X = watchValue(oldX,event.accelerationIncludingGravity.x*10);
+    let Y = watchValue(oldY,event.accelerationIncludingGravity.y*10);
+    let Z = watchValue(oldZ,event.accelerationIncludingGravity.z*10);
     console.log(oldX,oldY,oldZ)
     document.querySelector("#x").value = oldX;
     document.querySelector("#y").value = oldY;
