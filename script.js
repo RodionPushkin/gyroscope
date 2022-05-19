@@ -18,12 +18,12 @@ const accelerometerUpdate = (event) =>{
     oldX = X;
     oldY = Y;
     oldZ = Z;
-    if (oldY < 0) {
-        oldX = -oldX - 180;
-    }
-    if (oldX < 0) {
-        oldY = -oldY - 180;
-    }
+    // if (oldY < 0) {
+    //     oldX = -oldX - 180;
+    // }
+    // if (oldX < 0) {
+    //     oldY = -oldY - 180;
+    // }
     document.querySelector(".container").style.transform="rotateY("+(-oldX)+"deg) rotateX("+(-oldY)+"deg)";
 }
 
