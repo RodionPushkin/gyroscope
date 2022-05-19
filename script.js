@@ -33,5 +33,5 @@ if (window.DeviceMotionEvent == undefined) {
 else {
     document.querySelector("#acc").textContent = "YES";
     document.querySelector("#acc").className = "yes";
-    window.addEventListener("devicemotion", accelerometerUpdate(e), true);
+    window.addEventListener("devicemotion", (e)=>{accelerometerUpdate(e)}, true);
 }
