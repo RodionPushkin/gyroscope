@@ -21,7 +21,7 @@ const accelerometerUpdate = (event) =>{
     if (oldY < 0) {
         oldX = -oldX - 180;
     }
-    document.querySelector(".container").style.transform="rotateX("+(-oldX)+"deg)";
+    document.querySelector(".container").style.transform="rotateY("+(-oldX)+"deg)";
 }
 
 if (window.DeviceMotionEvent != undefined) {
