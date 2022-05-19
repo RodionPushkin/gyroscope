@@ -5,7 +5,7 @@ const watchValue = (oldValue,newValue) => {
     newValue = Math.floor(newValue)
     if(newValue - oldValue == 0){
         return oldValue
-    }else if(newValue - oldValue >= document.getElementById('index').value || newValue - oldValue <= document.getElementById('index').value * -1){
+    }else if(newValue - oldValue >= 10 || newValue - oldValue <= 10 * -1){
         console.log(`oldValue: ${oldValue}, newValue: ${newValue}, ${newValue - oldValue}`)
         return newValue
     }
