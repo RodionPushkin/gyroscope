@@ -3,6 +3,9 @@ let oldY = 0;
 let oldZ = 0;
 // 85 / 90
 const watchValue = (oldValue,newValue) => {
+    console.clear()
+    console.log('oldValue',oldValue)
+    console.log('newValue',newValue)
     if(newValue - oldValue > document.getElementById('index').value){
         return Math.floor(newValue)
     }else if(newValue - oldValue < document.getElementById('index').value){
