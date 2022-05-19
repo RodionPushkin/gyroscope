@@ -9,7 +9,7 @@ else {
     document.querySelector("#acc").className = "yes";
     window.addEventListener("devicemotion", accelerometerUpdate, true);
 }
-const watchValue(oldValue,newValue){
+const watchValue = (oldValue,newValue) => {
     if(newValue + 5 > oldValue){
         return Math.floor(newValue)
     }else if(newValue - 5 < oldValue){
@@ -25,9 +25,7 @@ function accelerometerUpdate(event) {
     let oldX = 0;
     let oldY = 0;
     let oldZ = 0;
-
-
-
+    console.log(oldX,oldY,oldZ)
     document.querySelector("#x").value = oldX;
     document.querySelector("#y").value = oldY;
     document.querySelector("#z").value = oldZ;
