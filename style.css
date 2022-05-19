@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 BODY {
-    perspective: 500px;
+    perspective: 1500px;
     perspective-origin: center center;
 }
 
