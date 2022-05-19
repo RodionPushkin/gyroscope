@@ -3,8 +3,7 @@ let oldY = 0;
 let oldZ = 0;
 // 85 / 90
 const watchValue = (oldValue,newValue) => {
-    console.log('oldValue',oldValue)
-    console.log('newValue',newValue)
+    console.log(newValue - oldValue)
     if(newValue - oldValue > document.getElementById('index').value){
         return Math.floor(newValue)
     }else if(newValue - oldValue < document.getElementById('index').value){
@@ -13,7 +12,6 @@ const watchValue = (oldValue,newValue) => {
     return oldValue
 }
 const accelerometerUpdate = (event) =>{
-    console.clear()
     let X = watchValue(oldX,event.accelerationIncludingGravity.x)*10;
     let Y = watchValue(oldY,event.accelerationIncludingGravity.y)*10;
     let Z = watchValue(oldZ,event.accelerationIncludingGravity.z)*10;
