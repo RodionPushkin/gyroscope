@@ -18,21 +18,12 @@ const accelerometerUpdate = (event) =>{
     oldX = X;
     oldY = Y;
     oldZ = Z;
-    document.querySelector("#x").value = oldX;
-    document.querySelector("#y").value = oldY;
-    document.querySelector("#z").value = oldZ;
     if (oldY < 0) {
         oldX = -oldX - 180;
     }
     document.querySelector(".container").style.transform="rotateX("+(-oldX)+"deg)";
 }
 
-if (window.DeviceMotionEvent == undefined) {
-    document.querySelector("#acc").textContent = "NO";
-    document.querySelector("#acc").className = "no";
-}
-else {
-    document.querySelector("#acc").textContent = "YES";
-    document.querySelector("#acc").className = "yes";
+if (window.DeviceMotionEvent != undefined) {
     window.addEventListener("devicemotion", (e)=>{accelerometerUpdate(e)}, true);
 }
